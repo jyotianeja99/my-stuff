@@ -1,0 +1,59 @@
+
+4 overloaded methods m1(int a), m1(float f).. etc : 
+arg1 : int
+arg2 : float
+arg3 : boolean
+arg4 : Object
+
+the actual arguments passed as:
+1. m1('a');
+2. m1(true);
+3. m1(10.5);
+
+case1 : 'a' char will be promoted to int type, hence arg1 will be invoked.
+case2: true(boolean) will be first converted to Boolean and then to Object. (boolean -> Boolean -> Object)
+case3: 10.5 will be first to Float and then to Object.
+
+Hence, output will be intObjectObject
+
+2. If a base class throws a checked exception, then the child class should also throw the same checked exception or its child.
+
+3. When static methods are defined, in both parent and child class, no @Override is used and it is called as method hiding. The method is invoked based on the reference type. When object is casted to parent type and method is invoked, the parent class method is invoked.
+
+- Variable reference is based on the reference type and not the runtime object. On using the parent reference, the variable's value will be equal to the parent class' value.
+
+- this() is used to invoke another constructor. Parameterized -> default and default -> parameterized (can call each other).
+
+- In inheritence, we can not reduce the scope of variables in the child class, can only increase. Return type must also be compatible(same nd not co variant)
+
+- If same method with different return types are declared in two interfaces, compile time exception is thrown.
+
+- When importing a package, all classes and intefaces are available to the class but not the subpackage. So the subpackage needs to be imported to access.
+
+While resolving method calls, compiler will always gve precedence in the order:
+- exact match
+- widening
+- Auto boxing
+- var-arg
+
+new Test('a') -> When exact match is not there, by widening double-arg constructor will get chance.
+new Test('10') -> if int match is not there, double-arg will get chance.
+new Test(10.5) -> double-arg is invoked.
+
+- Methods in interface are by default public so public keyword is redundant. But in the implementing classes, it is necessary to declare the method as public.
+
+- Every variable present in the interface is by default final. It cannot be overridden in implementing class. Compile time error will be thrown.
+
+- RunTimeException and its child classes are unchecked exceptions. Except these, remaining are considered as checked exceptions.
+
+- If there's a chance of getting a checked exception inside a method, then it should be handled either by try-catch block or by throws keyword and should throw either the same checked exception or its child.
+
+- 
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+
+1. Internal implementation of HashMap 
+2. Internal implementation of HashSet 
+3. Spring bean lifecycle 
+
+
+Internal working of HashSet:
+
+HashSet implements Set interface.
+In hashset, it internally maintains a hashmap.
+Let's see constructor:
+
+Public HashSet(){
+	map = new HashMap();  	
+
+}
+
+HashSet hs = new HashSet<String>();
+	ie. new HashMap<String, Object>();
+
+Public boolean add("Geeks"){
+	map.put("Geeks",PRESENT)==null;
+
+}
+
+Public boolean remove("RED")
+{
+	return map.remove("RED") == PRESENT	
+}
+returns true, if the element is present in the set otherwise it returns false.
+
+Where PRESENT is a constant, defined as private static final Object PRESENT = new Object();
+
+
+HashSet internally maintains a map. The entries in set are the keys of this map and the value is the PRESENT keyword. So when a value is entered in hashset , it invokes the put() method of the map and 
+While inserting the element it checks the key if already present and and returns true/false if the previous value was null/PRESENT.
+
+HASHMap working:
+
+A Hashmap is used to store the objects as key value pairs and 
+
+		
+

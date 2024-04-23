@@ -1,0 +1,14 @@
+
+Angular commands:
+
+ng new third-project
+
+ng generate component address-book
+
+ng generate module view
+
+ng generate service test
+
+
+
+

@@ -1,0 +1,359 @@
+
+
+default case can be at any position in the switch block, still the match will be found.
+
+String+int can cancatenate. Automatic conversion of int to Integer and + concats them with String.
+
+Once we create an array, every element is initialized with 0 till any explicit initialization.
+
+The parameter of if() should always be a boolean.
+
+- Switch case: When default is added to the top, though it first looks for a suitable match, if it is not found, default case is executed and all other cases below are also executed until break is encountered.
+If any case is satisfied, all other cases are satisfied, his is called as fall-through-inside-switch.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Java Certification Questions:
+
+- public class Test  
+{
+	public static void main(String[] args) 
+	{
+		byte b = 10;
+		switch(b)
+		{
+			case 10: System.out.print(10);
+			case 100: System.out.print(100);
+			case 1000: System.out.print(1000);			
+		}
+	}
+}     //compilation fails. 1000 is not in the byte range.
+
+2.   public class Books 
+
+{
+	public static void main(String... titles) 
+	{
+		System.out.println(titles[1]);
+	}
+}
+
+3.   public static void main(String[] args) 
+	{
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		for (Integer I : list)
+		{
+			System.out.println(I);
+			break;
+		}		
+	}
+
+4.  public static void main(String[] args) 
+	{
+		String a = "durga";
+		int b =10;
+		int c =20;
+		int d = 30;
+		System.out.println(a+b+c+d);
+	}
+
+
+5.   public static void main(String[] args) 
+	{
+		int i = 0;
+		if(++i<0)
+		{
+			System.out.print("A");
+		}
+		{
+			System.out.print("B");
+		}
+		System.out.print("C");				
+	}
+
+6.   public static void main(String[] args) 
+	{
+		do
+		{
+			int x = 0;
+			System.out.print(++x +" ");
+		}
+		while (x<=5);		
+	}
+
+
+7. 	  public static void main(String[] args) 
+	{
+		byte b = 10;
+		switch(b+1)
+		{
+			case 10: System.out.print(10);
+			case 100: System.out.print(100);
+			case 1000: System.out.print(1000);			
+		}
+	}
+
+8.  public static void main(String[] args) 
+	{
+		int[] x = new int[3];
+		int y =0;
+		for (int i =0; i>x.length; i++)
+		{
+			x[i]=++y;
+		}
+		for(int x1 : x)
+		{
+			System.out.print(x1);
+		}		
+	}
+
+9.   public static void main(String[] args) 
+	{
+		List<String> l1= Arrays.asList(new String[] {"A","B"});
+		List<String> l2= new ArrayList<>();
+		l2.add("A");
+		l2.add("B");
+		if (l1==l2)
+		{
+			System.out.println("Equal By Address");
+		}
+		else if(l1.equals(l2))
+		{
+			System.out.println("Equal By Content");
+		}
+		else
+		{
+			System.out.println("Not Equal either by Address or by Content");
+		}	
+		
+	}
+
+
+10.  public static void main(String[] args) 
+	{
+		int i = 1;
+		do
+		{
+			while(++i<3)
+			{
+				System.out.print(++i);
+			}
+		}
+		while (++i<10);				
+	}
+
+
+11.  public static void main(String[] args) 
+	{
+		int x =10;
+		final int y =20;
+		switch(x)
+		{
+			//Line-1
+			case 30:
+				System.out.println(30);
+			default:
+				System.out.println(0);
+		}
+	}
+
+
+12.  public static void main(String[] args) 
+	{
+		String[] s = {"Cat","Dog","Rat"};
+		for(int i=0; i<=s.length; i++)
+		{
+			System.out.println(s[i]);
+		}
+	}
+
+
+13.  public static void main(String[] args) 
+	{
+		int x =10;
+		String result=(x>20)?"x is >20":(x>5)?"x is > 5";
+		System.out.println(result);
+	}
+
+
+14.  traverse array in reverse order.. which loop?
+
+15.  public static void main(String[] args) 
+	{
+		int  x = 0;
+		int y = 0;
+		y = ++x;
+		if(x)
+		{
+			System.out.println("Hello");
+		}
+		else
+		{
+			System.out.println("Hi");
+		}
+	}
+
+
+16.  public static void main(String[] args) 
+	{
+		int i = 5;
+		while(++i < 10)
+		{
+			System.out.print(i++);
+		}		
+	}
+
+
+17.  public static void main(String[] args) 
+	{
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		for (Integer I : list)
+		{
+			continue;
+			System.out.print(I);
+		}		
+	}
+
+
+18.  public static void main(String[] args) 
+	{
+		int x =10;
+		int y =0;
+		switch(x)
+		{
+			case 10: 
+				y++;
+			case 20:
+				y=y+2;
+			case 30:
+				y= y+3;
+		}
+		System.out.println(y);
+	}
+
+
+19. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+
+v1/products/scheduler/5/action/summary
+
+
+
+ select dti.status from dgcontroller.dg_task_instances dti join dgcontroller.dg_task_scheduler_hist dsh 
+ on dti.task_instance_id = dsh.task_instance_id
+ where dsh.scheduled_id = 5;
+
+
+
+"from DgTaskScheduleInfo where isEnabled=true and lower(moduleType)=:module and lower(taskType)=:taskType order by "+ fieldName +" "+sortorder;
+
+
+Select * from decontroller.dg_task)schedule_info where isEnabled = true AND module_type='dbms' AND taskType = 'masking' desc

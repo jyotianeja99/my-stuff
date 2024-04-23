@@ -1,0 +1,174 @@
+Spring:
+A lot of configuration required.
+A lot of jar dependencies.
+
+Spring Boot:
+Easy to get started with Spring development.
+Minimize the amount of manual configuration.
+Perform auto configuration based on props files and JAR classpath.
+Help to resolve dependency conflicts(Maven/Gradle).
+Provides embedded HTTP server(Tomcat/Jetty)
+
+
+java -jar mycoolapp.jar
+
+mvnw- when maven is not installed.
+
+mvn clean compile test 
+
+spring boot starter web: collection of maven dependencies.
+
+spring boot maven plugin: To package executable jar/war( can also easily run the app)
+
+$ ./mvnw package  / ./mvn package
+$ ./mvnw spring-boot:run ./mvn spring-boot run
+
+
+Annotation:
+
+@SpringBootApplication composed of:
+
+@EnableAutoConfiguration: Enablea Spring Boot's auto configuration support.
+@ComponentScan: Enables component scanning of current package. Also recursively scans sub-packages.
+@Configuration: Able to register extra beans with @Bean or import other configuration classes.
+
+class SpringApplication: Bootstrap your SPring Boot application.
+Behind the scenes:
+- Create application context and registers all beans.
+
+
+Good practice to include all beans in sub packages of the package in which main class resides. If some beans are in other packages, then scan them the way:
+
+@SpringBootApplication(
+	scanBasePackages = { "com.luv2code.springboot.demo.mycoolapp","org.acme.iot.utils",com.abc.acd
+	}
+)
+
+Application properties--
+application.properties will be loaded when server strarts.
+read data from application.properties:
+@Value("${coach.name}")
+
+Warning:
+Do not use the src/main/webapp directory if your application is packaged as jar. It's a standard maven directory but it works only with WAR packaging.
+
+dependency: <spring-boot-starter-web> - It contains spring-web, spring-webmvc, hibernate-validator, json, tomcat etc.
+
+See maven dependencies hierarchy in intelliJ as:
+	View > Tool Windows > Maven Projects > Dependencies
+
+Parent dependencies: spring-boot-starter-parent, has a version, so no need to add versions to the sub dependencies.
+
+spring-boot-devtools- changes done to spring boot application requires system restart, it automatically restarts your application.
+
+Spring Boot actuator:
+
+It provides some endpoints for free. We can monitor the health of our application using these end points. prefex all endpoints with /actuator/....
+Some of them are:
+- /info: provides information about the application, set in the applications.properties file with prefix set as info.app...
+It returns a json object.
+/health
+/auditevents
+/beans
+/mappings
+By default.\, only info and health are exposed.
+
+To expose all, add value in application.properties:
+management.endpoints.web.exposure.include=*
+
+
+Exclude end points from security:
+management.endpoints.web.exposure.exclude=health,info
+
+Run Project from Command-Line:
+
+./mvnw package
+./mvnw spring-boot:run
+
+
+Properties are roughly grouped into the following categories:
+-Core  -Web  -Security. -Data  -Actuator. -Integration  -DevTools.  -Testing
+
+Core Properties:
+Logging levels: trace, debug, info, warn, error, fatal, off.
+
+#Log levels security mapping
+
+Logging.level.org.springframework=DEBUG
+Logging.level.org.hibernate=trace
+Logging.level.com.luv2code=info
+
+#Log file name
+Logging.file=my-crazy-stuff.log
+
+Web Properties:
+
+Server.port=8090
+
+Server.servlet.context-path=/my-silly-app
+
+Server.servlet.session.timeout=15m
+
+Actuator Properties:
+
+Management.endpoints.web.exposure.include=* etc.
+
+Security Properties:
+
+spring.security.user.name=admin
+Spring.security.user.password=topsecret
+
+Data Properties:
+#JDBC URL
+Spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

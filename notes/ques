@@ -1,0 +1,80 @@
+
+
+java doesn't have parseInt()
+s = "jyoti";
+
+Input: 123
+
+
+
+public int parseInt(String s){
+char[] c = s.toCharArray();
+int num=0;
+for(int a =0; a< c.length;a++){
+	num = num*10+ c[a] -45;
+	
+}
+return num;
+
+	
+}
+
+
+c.stream().map(a -> a-45).collect()
+
+
+class Student{
+		
+		int s_id;
+		String name;
+		private static Student s;
+
+		private Student(){
+
+
+		}
+
+		public static getInstance(){
+			
+			synchronized()
+			{
+			if(s == null){
+				s = new Student();
+			}
+			return s;
+			}
+		
+		}
+
+
+}
+public final class Car{
+	
+public final void f(){
+	//
+	//
+}
+
+
+}
+
+class HondaCity extends Car{
+
+ @Override
+ public final void f(){  //compilation err
+ }
+ }
+	
+
+
+}
+
+finally(){
+	conn.close();
+}
+
+finalized(){
+	
+}
+
+System.

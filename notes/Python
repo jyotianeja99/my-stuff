@@ -1,0 +1,125 @@
+
+Slicing and Indexing
+
+mystring = "Jyoti Aneja"
+mystring[2:]  o: oti Aneja
+
+mystring[:3] = Jyo
+
+mystring[6] = A
+
+String Properties/ Methos
+
+Formatting with {} :
+
+print('This is a string {}'.format('INSERTED'))
+
+10/11/2020
+
+name = 'Jyoti'
+print('Hello, his name is {}'.format(name))
+
+Using f string literals:
+
+print(f'Hello, his name is {name}')
+
+
+Formatting with placeholders:
+print("I'm going to inject %s here." %'something')
+
+x,y = 'some', 'more'
+print("I'm going to inject %s text here and, %s text here."%(x,y))
+
+Print formatting here: https://pyformat.info/
+
+Lists:
+
+Ordered sequences.
+
+Dictionaries in Python:
+
+Dictionaries are objects retrieved by key name. 
+Unordered and can't be sorted.
+
+
+Lists: Objects retrieved by location. Ordered sequence, can be indexed or sliced.
+
+Tuples:
+
+Tuples are very similar to lists. One key difference- immutability. 
+Once an element is inside a tuple, it cannot be reassigned. Tuples use parenthesis: (1,2,3)
+
+
+Sets:
+
+Unordered collections of unique elements.
+there can be one representative of the same object.
+
+Booleans:
+
+convey True/False
+
+control flow & logic.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

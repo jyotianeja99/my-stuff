@@ -1,0 +1,13 @@
+Git Commands:
+
+echo "# JavaConcepts" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jyotianeja99/JavaConcepts.git
+git push -u origin master
+
+
+…OR push an existing repository from the command line:
+git remote add origin https://github.com/jyotianeja99/JavaConcepts.git
+git push -u origin master

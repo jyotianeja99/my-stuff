@@ -1,0 +1,49 @@
+
+https://javarevisited.blogspot.com/2015/10/133-java-interview-questions-answers-from-last-5-years.html
+Q-36
+
+Multithreading, concurrency and thread basics
+Date type conversion and fundamentals
+Garbage Collection
+Java Collections Framework
+Array
+String
+GOF Design Patterns
+SOLID design principles
+Abstract class and interface
+Java basics e.g. equals() and hashcode
+Generics and Enum
+Java IO and NIO
+Common Networking protocols
+Data structure and algorithm in Java
+Regular expressions
+JVM internals
+Java Best Practices
+JDBC
+Date, Time, and Calendar
+XML Processing in Java
+JUnit
+Programming
+
+
+Read more: https://javarevisited.blogspot.com/2015/10/133-java-interview-questions-answers-from-last-5-years.html#ixzz6Plb628qB
+
+- volatility/ atomicity??
+
+byte a = 127;
+byte b = 127;
+b=a+b; //compile-time error
+b+=a; //ok, casting is done implicitly from int to byte(as 254 is int now).
+
+Double cannot be stored in long without casting, range of double is more than long and we need to typecast explicitly.
+
+3*0.1 == 0.3? true or false?
+
+From java 7 we can use string in switch case but it's just a syntactic sugar as internally it uses the hashCode value of the string for omparison.
+
+Weak Reference/ Soft Reference:
+Both weak and soft reference helps garbage collector and make memory efficient, Weak reference becomes eligible for gc as long as the last strong reference is lost. Soft reference, it cannot prevent but it can delay gc as long as JVM needs memory.
+
+Weak hashmap works like a normal hashmap but uses weak reference for keys which means if the key object doesn't have any then both key/value will become eligible for garbage collection.
+
+

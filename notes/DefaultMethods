@@ -1,0 +1,148 @@
+Default methods in interfaces:
+
+Re-engineering an existing JDK ramework is always very complex. Modifying an interface in a JDK framework will break all the classes that implement th einterface as the concrete classes will have to implement the new abstract method, if introduced.
+Therefore, to extend the interfaces in a backward compatible way, default methods are introduced.
+
+For java 8, all collections have been extended and the method forEach() is added to all collections.
+
+looks like:
+public inteface Iterable<T> {
+	public void forEach(Consumer<? super T>consumer);
+
+}
+
+This would result each implementing class with compile errors, a default method added with a required implementation in order that the existing implementation should not be changed.
+
+Iterable interface wth default method as:
+
+public interface Iterable<T>{
+	public default void forEach(Consumer<? super ?> consumer) {
+		for(T t: this){
+			consumer.accept(t);
+		}
+	}
+
+}
+
+Abstract class v/s Interfaces in java8:
+
+- Abstract classes can define constructors. They are more structured and can have a state associated with them. However, they are still a different concept.
+Do again: difference between abstract classes and interfaces with default methods?????????
+
+ambiguity: Just as Java does not support multiple inheritance, if a java class implements 2 or more interfaces, the default method implementation is received more than one. Therefore to remove this ambiguity, the same method needs to be defined in the implementing class.
+
+Static methods in interfaces:
+
+Static methods in interface cannot be overridden as the interface name will be required for invoking them so there's no chance for ambiguity.
+Static methods of an interface can only be called by the Interface name, there is no other way.
+
+Predefined functional interfaces:
+Some predefined functional interfaces, to make lambda expressions to help in programming activities.
+
+1. Predicate
+2. Function
+3. Consumer
+4. Supplier
+
+Two argument predefined functional interface:
+BiPredicate
+BiFunction
+BiConsumer
+
+-- Primitive Functional Interfaces:  java.util.function package
+java.util.function package
+
+
+Predicate(I)--- single abstract method.
+
+Interface Predicate{
+	public abstract boolean test(T t);
+}
+
+(Integer I) -> I%2==0. -- returns true.  ------ I -> I%2 == 0
+
+Predicates can be joined by 3 methods:
+and()
+or()
+negate()
+
+-- if(p1.and(p2).test(I))
+-- if(p1.or(p2).test(I))
+-- if(p1.negate(p2).test(I))
+
+
+Function Chaining:
+
+f1.andThen(f2).apply(I);
+
+Return type o function 1 acts as the input for the other function.
+
+
+f1.compose(f2).apply(I);
+
+The difference s in compose() first f2 will be applied and then f1 will be applied.
+
+Consumer:
+
+Predicate<T> -- returns boolean
+
+Function<T,R> -- R type
+
+Consumer<T>  -- void
+
+Interface Consumer {
+	public void accept(T t);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

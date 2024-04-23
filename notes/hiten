@@ -1,0 +1,49 @@
+CREATE DATABASE JYOTI_SSNO_MASK COMMENT = 'To test ssno masking.';
+
+use hithen_db;
+
+CREATE TABLE "HITHEN_DATA" 
+(
+    "SSN" VARCHAR2(26 BYTE), 
+    "GENDER" VARCHAR2(26 BYTE), 
+    "BIRTHDATE" VARCHAR2(26 BYTE), 
+    "MAIDEN_NAME" VARCHAR2(26 BYTE), 
+    "LAST_NAME" VARCHAR2(26 BYTE), 
+    "FIRST_NAME" VARCHAR2(26 BYTE), 
+    "ADDRESS" VARCHAR2(26 BYTE), 
+    "CITY" VARCHAR2(26 BYTE), 
+    "STATE" VARCHAR2(26 BYTE), 
+    "ZIP" NUMBER(38,0), 
+    "PHONE" VARCHAR2(26 BYTE), 
+    "EMAIL" VARCHAR2(26 BYTE), 
+    "CC_TYPE" VARCHAR2(26 BYTE), 
+    "CCN" VARCHAR2(26 BYTE), 
+    "CC_CVC" NUMBER(38,0), 
+    "CC_EXPIREDATE" DATE
+);
+
+CREATE TABLE HITHEN_DATA_3 AS SELECT * FROM HITHEN_DATA;
+SELECT * FROM HITHEN_DATA_3;
+
+SHOW GRANTS ON ACCOUNT;
+
+create role hithen_role;
+create user hithen_masker password='dataguise' default_role=hithen_role;
+grant role accountadmin to user hithen_masker;
+grant role accountadmin to role hithen_role;
+grant operate,usage on warehouse hithen_wh to role hithen_role;
+grant usage,CREATE SCHEMA on database hithen_db_dg to role hithen_role;
+
+grant usage,CREATE TABLE,CREATE FUNCTION on schema hithen_db_dg.hithen_db_dg_objects to role hithen_role;
+grant usage,CREATE TABLE,CREATE FUNCTION on schema hithen_db_dg.dg to role hithen_role;
+
+grant usage on database hithen_db to role hithen_role;
+grant usage on schema hithen_db.public to role hithen_role;
+grant select,update on all tables in schema hithen_db.public to role hithen_role;
+
+show users;
+drop user hithen_masker;
+alter user hithen_masker set mins_to_unlock= 0;
+
+show grants to role hithen_role;
+

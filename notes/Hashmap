@@ -1,0 +1,7 @@
+
+A hashmap contains an array of Nodes and a Node represents a class having following objects:
+- int hash
+- K key
+- V value
+- Node next
+

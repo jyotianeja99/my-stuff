@@ -1,0 +1,12 @@
+insert into Employee values('123-45-6789','Jyoti', 'Aneja','Faridabad');
+insert into Employee values('321-54-9876','Lalit', 'Kashyap','Mohali');
+insert into Employee values('789-56-3456','KJ', 'Singh','Mohali');
+insert into Employee values('567-45-2345','Mandeep', 'Singh','Chandigarh');
+insert into Employee values('987-54-4321','Abhishek', 'Kumar','Chandigarh');
+
+
+https://s-5eb259f51.dataguise.online/#/source
+
+test.dependsOn testNgApp
+jar.dependsOn buildNgApp
+tasks.findByName('compileJava').mustRunAfter 'buildNgApp'

@@ -1,0 +1,46 @@
+
+2nd way: $ mkdir x x/x1 x/x2 x/x1/x11 x/x1/x12 y y/y1 y/y2 y/y1/y11 y/y1/y12
+3rd way: $ mkdir -p x/x1/x11 x/x1/x12 x/x2 y/y1/y11 y/y1/y12 y/y2
+4th way: $ mkdir -p x/x{1,2} x/x1/x1{1,2} y/y{1,2} y/y1/y1{1,2}
+
+Summary of Directory related Commands: 
+mkdir dir1 mkdir dir1 dir2 dir3 mkdir dir1/dir2/dir3 mkdir -p dir1/dir2/dir3 mkdir dir{1..6}
+rmdir dir1 rmdir dir1 dir2 dir3 rm -r dir1 rm -ri dir1 rm -rf dir1 rm -rv dir1 rm -r dir* rm -r dir{2..6} rm -r dir[2,4] cp file1.txt file2.txt cp file1.txt file2.txt file3.txt output cp dir1/* dir2 cp -r dir1 dir2 mv file1.txt file2.txt mv dir1 dir2 (rename b'z dir2 not available) mv dir1/* dir2 mv dir1 dir2 (move dir1 to dir2 because dir2 available) cd cd ../../.. cd / cd ~ cd -
+
+2) View Content of the Files We can view content of the file by using the following commands
+ 1) cat 2) tac 3) rev 4) head 5) tail 6) less 7) more
+
+ Pg-42
+
+We can compare data of two files by using the following commands: 
+1) cmp
+ 2) diff.   --- arguments 
+ 3) sdiff
+ 4) vidiff
+ 5) comm
+
+Vimdiff is my fav command.
+	ctrl + w + w -- to go to next window.
+	:q -- closes current window.
+	:qa -- closes all windows
+	:wqa! -- writes and closes all windows.
+
+
+
+
+
+
+Creation of Link files:
+
+a. Hard Link files
+b. Soft link files
+
+IN BOTH CASES, A CHANGE DONE IN either file will reflect in the other file as well.
+
+Word count(wc)
+
+Wc -wL e.txt. -- L gives highest characters in aline.
+W - total words in file.
+
+sudo chown -R dataguise:dataguise ../SaaS_7_2_GA/
+

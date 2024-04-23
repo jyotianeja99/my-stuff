@@ -1,0 +1,74 @@
+
+
+
+
+
+
+
+
+s1 = "jyoti"
+s2 = "aneja"
+s1.concat(s2) -- how many objects will be created?
+
+
+
+
+
+when s1 and s2 are received as run time arguments?
+
+different mappings in Spring Boot...
+
+Xml as the transfer object--
+
+Shallow copy vs Deep copy-- 
+
+ArrayList vs LinkedList--
+
+
+in one comparator: any number of properties..?
+
+
+
+{Student(name,age,class), ...,  }
+
+classes.. based on names, based on age  -- in one comparator.
+
+HashMap:  --internal working
+
+
+10 key value pairs.. 
+inserted into HashMap..
+
+Order?
+For sorting?
+
+
+LOBs - Large objects
+
+BLOBs - Binary large objects - image,video etc
+- 4gb allowed
+
+
+
+CLOBs - Character " " ""
+  	- 4gb max. - pdf, .txt .xml etc
+
+Steps:
+
+1. Create table Persons(name varchar(30), image BLOB);
+2. Create File object to represent image
+File f = new File("kat.jpg");
+3. Create FIS to read binary data:
+FIS fs = new FIS(f);
+PreparedStmt = conn.createStatement("insert into Persons values(?,?"));
+stmt.setString(1,"Kat");
+stmt.setBinaryStream(2, fis);
+int rc = stmt.executeUpdate();
+IF(RC == 0)
+SOP("RECORD NOT INSERTED")
+ELSE
+SOP("record inserted")
+
+
+
+

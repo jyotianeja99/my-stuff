@@ -1,0 +1,33 @@
+Arraylist
+
+ArrayList in java:
+Arraylist is a part of collection framework. It is the implementation of dynamic array. It may be slower than the standard array but it is very useful where a lot of manipulation of data is required.
+
+ArrayList<Integer> arrayList = new ArrayList<>();
+
+- arraylist, part of java.util package.
+- inherits AbstractList class and implements List interface.
+- ArrayList is initialized by a size, size is variable, can be increased or decreased as required.
+- Java arraylist allows us to randomly access an element.
+- It can be used for primitive data types, that's where wrapper classes come in place.
+
+ArrayList is a dynamic sized array, we do not have o specify size while creating an arraylist. We can dynamically add and remove elements. It automatically resizes itself.
+
+Internal working of ArrayList:
+Basic idea when array becomes full and user wishes to add more elements:
+- Create a bigger sized memory on heap memory.(eg double size)
+- Copy current memory elements to the new memory.
+- New element is added now as there is bigger memory available.
+- Delete the old memory.
+
+Applications:
+- where we need to list elements having variable length.
+
+Created?
+Created by methods as well as constructors.
+
+Consructors:
+ArrayList<>();
+ArrayList<>(Collection c);
+ArrayList<>(int capacity);
+

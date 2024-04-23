@@ -1,0 +1,38 @@
+
+select * from dgcontroller.dg_discover_table_statistics d where database_name = 'sys';
+
+select * from dgcontroller.dg_task_instances d;
+
+select * from dgcontroller.dg_task_scheduler_hist dtsh where id = 54;
+
+select * from dgcontroller.dg_task_instances dti
+
+
+
+
+
+select * from dgcontroller.dg_task_scheduler_hist dt where schedule_name = 'ds_2020-06-10_08-23-56';
+
+select * from dgcontroller.dg_task_scheduler_hist dt;
+
+
+
+select * from dgcontroller.dg_task_instances d where task_instance_id = 1;
+
+select * from dgcontroller.dg_task_schedule_info dtsi where schedule_name = 'ds_2020-06-10_08-23-56';
+
+
+
+
+
+
+
+select * from dgcontroller.dg_task_instances dti;
+
+select * from dgcontroller.dg_task_instances_details dtid where task_instance_id =13;
+
+
+
+select * from dgcontroller.dg_task_schedule_info dtsi;  
+
+select * from dgcontroller.dg_task_schedule_info dtsi where schedule_name = 'ds_2020-06-10_08-23-56'; 

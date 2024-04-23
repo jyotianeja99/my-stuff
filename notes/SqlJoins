@@ -1,0 +1,28 @@
+Order of execution of query:
+
+select distinct column, count(column),
+from mytable 
+	JOIN otherTable 
+		ON mytable.column1 = otherTable.column2
+		where constraint_expression
+		GROUP BY column
+		HAVING constraint_expression 
+		ORDER BY column ASC/DESC
+		LIMIT count OFFSET COUNT;
+		
+
+Query order of execution:
+
+1. FROM and JOINS
+from clause and subsequent joins are the first to get executed to determine the total working set of data.
+
+2. WHERE
+
+3.GROUP BY
+after total working set of data after the where constraints are applied, are then grouped together based on column values specified in GROUP_BY column. 
+
+4. HAVING
+5.SELECT
+6. DISTINCT
+7. ORDER BY
+8. LIMIT/OFFSET

@@ -1,0 +1,44 @@
+now today's task is
+Method overriding
+1. What is method overriding
+2. Rules
+3. There are few cases in method overriding like in case of exception handling, in case of different (covariant return type) ese krke kch 8-10 cases h
+4. Where to use method overriding, and how to use method overriding concept
+
+Overriding in java:
+
+Overriding is a feature that allows a subclass or a child class to provide a specific implementation of a method that is provided by one of it's super classes. 
+
+When method has same name, same parameters/signature, same return type as that of the parent class method, it is an overridden method. 
+
+Method overriding - to achieve run time polymorphism.
+
+Animal a = new Tiger();
+a.move();
+
+Here, the type of animal is Tiger. Therefore, the method move() defined in the Tiger class will be invoked.
+
+Rules for method overriding:
+
+The access modifier for an overriding method, can allow more access but not less than the overridden method. ie. a protected method when overridden can me made public but not private.
+
+Rules for Overriding methods:
+
+1. Overriding and  access modifiers: When a method is being overridden, the overridden method is cannot allow less access rather, should have more access or equal.
+
+2. Final methods cannot be overridden.
+3. Static methods cannot be overridden. When you define a static method with same signature as in the base class, it is called data hiding.
+4. Private methods cannot be overridden in the sub classes.
+5. Overriding methods must have same return types or subtypes ie. covariant return types.
+6. Invoking overridden method from subclass: by using super.method() in the sub class overridden method.
+7. Overriding and constructor: We can never override constructor as the constructors of base class and the sub class can never have same name.
+8. Overriding and exception handling:
+	Rule #1: If super class method does not throw exception, then the sub class overriding method can only throw unchecked exception and cannot throw checked exception.
+	Rule #2: If the parent class's overridden method throws Exception, then the sub class method can only throw the same or sub class exception. Throwing a parent exception will give compile time 	error.
+	
+9. Overriding and Abstract methods: Abstract methods are meant to be overridden in the concrete classes. 
+10. Overriding and synchronized/strictfp methods: The presence of strictfp/synchronized modifiers with method have no effect on overriding. A strictfp method can override a non strictfp method and vice versa.
+
+
+
+

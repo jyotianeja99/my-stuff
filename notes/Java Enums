@@ -1,0 +1,21 @@
+Java Enums:
+
+- they are classes which have a fixed set of constants.
+- all fields are static and final.
+- can be inside he class or outside the class.
+- java enum internally inherits from Enum class and therefore cannot inherit from any other class.
+- Enum can contain constructors, fields, methods and main method.
+
+Enum improves type safety. It can be traversed and therefore can be easily used in switch cases.
+
+Java compiler internally adds values(), valueOf() and ordinal() at compile time. It internally creates a static and final class for the enum.
+
+values() - returns an array containing all values of the enum.
+valueOf() - java compiler internally adds this method at compile time. This method returns the value of the enum constant.
+ordinal() - This method returns the index of the enum value.
+
+Constructor of enum is private. If you don't declare constructor private, the compiler creates one, implicitly.
+
+
+
+

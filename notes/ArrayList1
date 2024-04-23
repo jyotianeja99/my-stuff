@@ -1,0 +1,31 @@
+q
+
+   ArrayList: It has 3 constructors.But we mostly use first constructor.
+
+   Resizeable array/growable array- underlying data structures.
+   Duplicates are allowed.
+   Insertion order is preserved.
+   Heterogeneous objects can be inserted in a list.
+   Heterogeneous allowed everywhere xcept TreeSet and TreeMap(because of sorting required)
+   Null insertion is possible.
+
+   Constructors:
+
+   ArrayList list = new ArrayList<>();
+   An empty object wil be created here with default capacity of 10. When the limit is reached ie. 10 elements have been inserted, a new object will be created with new capacity as:
+   New capacity = (current capacity*3/2)+1
+   All elements will be copied from old array to this new array and reference variable will point to new object.
+
+   Flaw: When 1000 objects are to be inserted.
+
+   2. ArrayList l = new ArrayList<>(1000);
+
+ArrayList l = new ArrayList<>(Collection c);  --treeset to arraylist etc.
+
+
+
+
+
+
+
+

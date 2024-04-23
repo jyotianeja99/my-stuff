@@ -1,0 +1,44 @@
+
+working directory--
+staging area--
+repository
+
+
+
+
+modes in git:
+--mixed(default)
+--soft 
+--hard
+
+--mixed: removes both repo nd staging.
+It won't touch working directory.
+
+
+
+I
+:wq
+
+
+echo "...." > file3.txt
+
+git add 
+
+
+git log --oneline
+
+To remove last commit:
+
+git reset --mixed 
+
+git reset HEAD~1
+
+git ls-files
+
+git add file3.txt; git commit -m 'file3 added again'
+
+To discard changes in working dir:
+git checkout --fileName
+
+
+

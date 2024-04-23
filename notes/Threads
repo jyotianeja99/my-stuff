@@ -1,0 +1,273 @@
+Types of Pools:
+- FixedThread Pool
+- CachedThread Pool
+- ScheduledThreadPool
+- SingleThreaded Executor
+
+There are fixed number of threads. You submit tasks o the pool and they are exected.
+Code:
+ExecutorService execSer = Executors.newFixedThreadPool(10);
+for(int i=0;i<100;i++){
+	service.execute(new Task());
+}
+System.out.println("Thread name:"+ Thread.currentThread().getName());
+}
+
+static class Task implements Runnable{
+	public void run(){
+	System.out.println("Thread name:" + Thread.currentThread().getName());
+	}
+}
+
+2. Cached ThreadPool
+It's little different. You don't have fixed number of threads and there's no fixed queue of tasks waiting for the pool.
+
+main thread:
+for i=0:100{
+	service.execute(new Task());
+}
+
+thread pool:
+Instead of maintaining a queue for the tasks, it has a synchronous queue which contains one thread and executes a thread.
+If all threads are busy and a task comes for execution, it will create a new thread for the task and place it in the pool.
+Lifecycle:
+If a thread is idle for 60 seconds(no task to execute), then kill the thread.
+Code:
+ExecutorService execSer = Executors.newCachedThreadPool();
+for(int i=0;i<100;i++){
+	service.execute(new Task());
+}
+System.out.println("Thread name:"+ Thread.currentThread().getName());
+}
+
+3. ScheduledThread Pool:
+Specifically for the tasks you want to schedule after a certain delay. Eg: security checks, login checks etc after every 10 seconds.
+-Service.schedule(): give delay of 10 seconds to execute after delay of 10 seconds.
+It will store all the tasks in a queue that is called a delay queue. Tasks might change the order in the queue.
+- Service.scheduleAtFixedRate(): execute a job every 10 seconds.
+- Service.scheduleAtFixedDelay(): Execute the task after a certain delay. A task takes 15 seconds to complete, take 10 seconds break and then re-execute the task.
+Code demo:
+
+Public static void main(String args[]){
+	ScheduledExecutorService service = Executors.newScheduledThreadPool(10);
+	Service.schedule(new Task(),10, TimeUnit.SECONDS);
+	service.scheduleAtFixedRate(new Task(), 15,10,SECONDS);
+	service.scheduleWithFixedDelay(new Task(),15,10,SECONDS);
+
+}
+Public class Task implements Runnable{
+Public void run(){
+}
+}
+
+Since Threaded Executor: Same as fixed thread pool, instead the size of the pool is 1.t0. There's only one thread fetching tasks from the blocking queue and running it. If an exception occurs while executing a task and the thread is killed, a new thread will be created and the tasks execution is not stopped anyhow. 
+
+Constructors and Lifecycle:
+
+Advanced:
+Pool size changes
+Queue Types
+Task Rejections
+Lifecycle methods
+
+ExecutorService service = Executors.newFixedThreadPool(10); It calls:
+
+Public static ExecutorService newFixedThreadPool(int nThreads){
+	return new ThreadPoolExecutor(nThreads, nThreads, 0L,TimeUnit.MILLISECONDS,new LinkedBlockingQueue<Runnable>());
+
+}
+This is constructor:
+ Public ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue, ThreadFactory threadFactory, RehectedExecutionHandler handler){
+}
+
+corePoolSize- Minimum/ Base size of pool./ initial size
+maxPoolSize- Maximum size of pool.
+KeepAliveTime + Unit - Time to keep an ideal thread alive.
+workQueue- BlockingQueue( Queue to store the tasks from which threads fetch them)
+threadFactory- Factory used to create new threads.
+Handler- RejectedExecutionHandler, Callback to use when tasks submitted are rejected.
+
+KeepAliveTime: time for which thread is idle and no tasks to execute, thread pool kills them.
+
+LifeCycle methods of thread pool:
+How to shut down a thread pool..
+Method:
+Service.shutdown();
+
+Callable/Future:
+
+The return type of run() is void. In case you need to return a value when a task is executed, implement Callable instead of Runnable. 
+
+Public class _12{
+Public static void main(String args[]){
+	ExecutorService service = Executors.newFixedThreadPool(10);
+	service.submit(new Task());
+	SOP("Current thread:"+ Thread.currentThread().getName());
+	}
+ }
+
+Static class Task implements Callable<Integer>{
+	
+	@Override
+	public Integer call() throws Exception{
+	  return new Random().nextInt();
+	}
+  }
+
+
+interface ArchiveSearcher { String search(String target); }
+ class App {
+   ExecutorService executor = ...
+   ArchiveSearcher searcher = ...
+   void showSearch(final String target)
+       throws InterruptedException {
+     Future<String> future
+       = executor.submit(new Callable<String>() {
+         public String call() {
+             return searcher.search(target);
+         }});
+     displayOtherThings(); // do other things while searching
+     try {
+       displayText(future.get()); // use future
+     } catch (ExecutionException ex) { cleanup(); return; }
+   }
+ }
+The FutureTask class is an implementation of Future that implements Runnable, and so may be executed by an Executor. For example, the above construction with submit could be replaced by:
+ FutureTask<String> future =
+       new FutureTask<String>(new Callable<String>() {
+         public String call() {
+           return searcher.search(target);
+       }});
+     executor.execute(future);
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

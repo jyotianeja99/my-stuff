@@ -1,0 +1,26 @@
+
+Date and Time API( Java 1.8)
+JODA time API - developed by joda.org(not oracle/sun)
+
+Need: The basic needs can be seen here as:
+Until java 1.7, several classes/interfaces to handle date/time.
+eg: Calender, java.util- Date/Calendar/TimeZone( low performance, deprecated)
+java.time package
+
+Period- quantity of time.
+
+TimeZone:
+By zoneId
+
+LocalDate
+LocalTime
+LocalDateTime
+Period
+Year
+ZoneId
+ZonedDateTime
+
+
+
+
+

@@ -1,0 +1,22 @@
+
+null..
+
+downcasting is performed. ie:
+
+void print(Object o){
+	SOP(o is object);
+}
+
+void print(String o){
+	SOP(o is String);
+}
+
+-- String parameter is matched when the argument is null ie. highest match is performed.
+
+Also, if 
+void print(Integer o){
+	SOP(o is integer);
+}
+
+is also defined, then ambiguity is there between Integer and String counterparts.
+

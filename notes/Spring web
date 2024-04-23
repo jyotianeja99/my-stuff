@@ -1,0 +1,31 @@
+Spring web
+spring security
+
+<>spring-security-oauth2-autoconfigure
+
+https://www.youtube.com/watch?v=CWiwpvpCrro
+
+//implementation of stack using 2 queues.
+//Basic programming questions in java
+// DBMS
+// arrays, hashmap, linkedLists
+// Types of keys in sql
+// Basic java questions, Spring based questions, DB related questions
+// BST
+//coding questions on data structures and algorithms.
+// Problems from hackerrank and geeksfor geeks can be helpful.
+// interests & hobbies
+//puzzles and quiz
+
+
+Scanner scanner = new Scanner(System.in);
+List<Integer> list = new ArrayList<Integer>();
+while (scanner.hasNextInt())
+  list.add(scanner.nextInt());
+int[] arr = list.toArray(new int[0]);
+But this is using the List which might be not for the beginners in java.
+So I found another way :-
+String s[]= scanner.nextLine().split(" ");
+for(int i =0 ;i < s.length;i++){
+    a[i]= Integer.parseInt(s[i]);
+}
